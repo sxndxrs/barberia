@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sxndxrs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar" style="opacity: 1; transform: none; display: flex;">
+        <div class="logo">Barberia<span>Leiva</span></div>
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav class="nav-menu" id="nav-menu">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="cortes.html" class="nav-link">Catalago de Cortes</a>
+            <a href="cortesrea.html" class="nav-link">Cortes Realizados</a>
+            <a href="tarifas.html" class="nav-link">Tarifas</a>
+            <a href="servicios.html" class="nav-link">Servicios</a>
+            <a href="contacto.html" class="nav-link">Contacto</a>
+
+        </nav>
+    </header>
+
+    <div class="site-selector">
+        <a href="index.html" class="selector-btn active">Barbería</a>
+        <a href="tienda.html" class="selector-btn">Tienda</a>
+    </div>
+
+    <section class="page-section">
+        <h2>Paquetes de Servicios</h2>
+        <p class="section-subtitle">Elige el plan que mejor se adapte a tu estilo y comodidad.</p>
+        
+        <div class="catalog-grid">
+            <div class="catalog-card">
+                <div class="catalog-img-wrapper" style="height: 250px;">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=600&auto=format&fit=crop" alt="Servicio Básico">
+                </div>
+                <div class="catalog-info">
+                    <h3>Servicio Básico</h3>
+                    <p><font color="white">Atención directa en nuestro local. Incluye corte de cabello clásico o moderno, lavado rápido y asesoramiento de imagen básico.</font></p>
+                    <div style="font-size: 1.5rem; color: #ff7878; font-weight: bold; margin-top: 10px;">L 150.00</div>
+                </div>
+            </div>
+
+            <div class="catalog-card">
+                <div class="catalog-img-wrapper" style="height: 250px;">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=600&auto=format&fit=crop" alt="Servicio Premium">
+                </div>
+                <div class="catalog-info">
+                    <h3>Servicio Premium</h3>
+                    <p><font color="white">Nos trasladamos hasta la comodidad de tu casa u oficina. Incluye corte premium, perfilado de barba con toalla caliente y productos de acabado.</font></p>
+                    <div style="font-size: 1.5rem; color: #ff7878; font-weight: bold; margin-top: 10px;">L 350.00</div>
+                </div>
+            </div>
+
+            <div class="catalog-card">
+                <div class="catalog-img-wrapper" style="height: 250px;">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=600&auto=format&fit=crop" alt="Servicio VIP">
+                </div>
+                <div class="catalog-info">
+                    <h3>Servicio VIP</h3>
+                    <p><font color="white">Experiencia completa a domicilio o local reservado. Incluye corte, barba, exfoliación facial, mascarilla negra y aplicación de tónico capilar.</font></p>
+                    <div style="font-size: 1.5rem; color: #ff7878; font-weight: bold; margin-top: 10px;">L 500.00</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div class="contact-container" style="margin-top: 40px;">
+            <div class="catalog-card" style="max-width: 500px; margin: 0 auto; padding: 30px; text-align: center;">
+                <h3>¡Haz tu reservacion ya!</h3>
+                <p style="color: #b89494; margin-bottom: 25px;">Haz clic abajo para agendar tu paquete por WhatsApp. Solo dinos qué servicio prefieres y tu horario disponible.</p>
+                
+                <a href="https://wa.me/+50497443516?text=Hola,%20quiero%20agendar%20uno%20de%20los%20paquetes%20de%20servicios%20en%20Barbería%20Leiva" 
+                   target="_blank" 
+                   class="hero-btn">
+                    Agendar paquete
+                </a>
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
