@@ -61,19 +61,65 @@ if (carouselInner && carouselSlides.length > 0) {
 
 const lightbox = document.getElementById('lightbox-pantalla');
 const lightboxImg = document.getElementById('lightbox-imagen-gigante');
-const imagenesCatalogo = document.querySelectorAll('.catalog-card img, .portfolio-card, .producto-img-wrapper img');
+const lightboxVideo = document.getElementById('lightbox-video-gigante');
 
-if (lightbox && lightboxImg && imagenesCatalogo.length > 0) {
-    imagenesCatalogo.forEach(imagen => {
-        imagen.addEventListener('click', () => {
-            lightboxImg.src = imagen.src;
-            lightbox.style.display = 'flex'; 
-            document.body.style.overflow = 'hidden'; 
-        });
-    });
 
-    lightbox.addEventListener('click', () => {
-        lightbox.style.display = 'none'; 
+document.addEventListener('click', (e) => {
+   
+    const card = e.target.closest('.portfolio-card, .catalog-card');
+    
+   
+    if (!card || !lightbox) return;
+
+    const img = card.querySelector('img');
+    const video = card.querySelector('video');
+
+   
+    if (img && img.src && img.getAttribute('src').trim() !== '') {
+        if (lightboxVideo) {
+            lightboxVideo.style.display = 'none';
+            lightboxVideo.pause();
+            lightboxVideo.src = '';
+        }
+
+        if (lightboxImg) {
+            lightboxImg.src = img.src;
+            lightboxImg.style.display = 'block';
+        }
+
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    } 
+  
+    else if (video && video.src && video.getAttribute('src').trim() !== '') {
+        if (lightboxImg) {
+            lightboxImg.style.display = 'none';
+            lightboxImg.src = '';
+        }
+
+        if (lightboxVideo) {
+            lightboxVideo.src = video.src;
+            lightboxVideo.style.display = 'block';
+            lightboxVideo.play();
+        }
+
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+});
+
+
+if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+     
+        if (lightboxVideo && e.target === lightboxVideo) return;
+
+        lightbox.style.display = 'none';
+        if (lightboxImg) lightboxImg.src = '';
+        if (lightboxVideo) {
+            lightboxVideo.pause();
+            lightboxVideo.src = '';
+        }
         document.body.style.overflow = 'auto';
     });
 }
@@ -110,5 +156,88 @@ selectorButtons.forEach(button => {
                 setTimeout(() => tiendaSite.classList.add('show-content'), 10);
             }
         }
+    });
+});
+
+function imprimirRecibo() {
+    window.print();
+}
+
+function copiarCodigoReserva(codigo) {
+    navigator.clipboard.writeText(codigo).then(() => {
+        alert('¡Código de reserva copiado al portapapeles: ' + codigo + '!');
+    }).catch(err => {
+        console.error('Error al copiar: ', err);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('adminSearchInput');
+    
+    if (searchInput) {
+        searchInput.addEventListener('keyup', function() {
+            const filter = this.value.toLowerCase();
+            // Selecciona todas las filas del tbody de la tabla admin
+            const rows = document.querySelectorAll('.admin-table tbody tr');
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                if (text.includes(filter)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    }
+});
+
+function copiarCodigoReserva(codigo) {
+    const mostrarToast = () => {
+        const toast = document.getElementById('toastNotification');
+        if (toast) {
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+    };
+
+    // Intenta usar la API moderna de Portapapeles
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(codigo).then(() => {
+            mostrarToast();
+        }).catch(() => {
+            copiarFormaTradicional(codigo, mostrarToast);
+        });
+    } else {
+        // Método de respaldo para HTTP o conexiones por IP
+        copiarFormaTradicional(codigo, mostrarToast);
+    }
+}
+
+function copiarFormaTradicional(texto, callback) {
+    const tempInput = document.createElement("input");
+    tempInput.value = texto;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); // Soporte para móviles
+
+    try {
+        document.execCommand("copy");
+        callback();
+    } catch (err) {
+        alert("No se pudo copiar automáticamente. Código: " + texto);
+    }
+
+    document.body.removeChild(tempInput);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const videosTarjeta = document.querySelectorAll('.portfolio-card video');
+    videosTarjeta.forEach(video => {
+        video.play().catch(error => {
+            console.log("Autoplay prevenido por el navegador:", error);
+        });
     });
 });

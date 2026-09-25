@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sxndxrs</title>
+    <title>Barbería Leiva - Tarifas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,89 +19,81 @@
             <a href="cortesrea.html" class="nav-link">Cortes Realizados</a>
             <a href="tarifas.html" class="nav-link">Tarifas</a>
             <a href="servicios.html" class="nav-link">Servicios</a>
-            <a href="contacto.html" class="nav-link">Contacto</a>
-
+            <a href="contacto.php" class="nav-link">Contacto</a>
+        <a href="mi_reserva.php" class="nav-link">Consultar Cita</a>
         </nav>
     </header>
 
     <div class="site-selector">
-        <a href="index.html" class="selector-btn active">Barbería</a>
-        <a href="tienda.html" class="selector-btn">Tienda</a>
+        <a href="index.html" class="selector-btn active" data-target="barberia">Barbería</a>
+        <a href="tienda.html" class="selector-btn" data-target="tienda">Tienda</a>
     </div>
 
-    
-<center>
-<table border="1" width="700" height="1000">
+    <section class="page-section">
+        <h2>Listado de Tarifas</h2>
+        <p class="section-subtitle">Precios accesibles para el mejor cuidado personal.</p>
 
-<tr>
-<td colspan="2" bgcolor="FF6666" align="center">
-<font size="5" color="FF0000"><b>Tarifas</b></font>
-</td>
-</tr>
+        <div class="tabla-contenedor">
+            <table class="tabla-tarifas">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="header-principal">Tarifas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="categoria-row">
+                        <td class="categoria-titulo">Adultos</td>
+                        <td class="categoria-titulo">PRECIO</td>
+                    </tr>
+                    <tr>
+                        <td>Corte normal</td>
+                        <td class="precio-cell">L 80</td>
+                    </tr>
+                    <tr>
+                        <td>Siza</td>
+                        <td class="precio-cell">L 70</td>
+                    </tr>
+                    <tr>
+                        <td>Corte con gillette</td>
+                        <td class="precio-cell">L 90</td>
+                    </tr>
+                    <tr>
+                        <td>Barba</td>
+                        <td class="precio-cell">L 50</td>
+                    </tr>
+                    <tr>
+                        <td>Cejas</td>
+                        <td class="precio-cell">L 20</td>
+                    </tr>
+                    <tr>
+                        <td>Diseños</td>
+                        <td class="precio-cell destacado">Precio variado</td>
+                    </tr>
 
-<tr>
-<td align="center"><b><font color="FF7B00" size="5"><b><u>Adultos</u></font></b></td>
-<td align="center"><b><font size="5">PRECIO</font></b></td>
-</tr>
-
-<tr>
-<td align="center"><font size="4">Corte normal</font></td>
-<td align="center" bgcolor="FF0000"><font color="FFFFFF"><b>L 80</b></font></td>
-</tr>
-
-<tr>
-<td align="center"><font size="4">Siza</font></td>
-<td align="center" bgcolor="FF0000"><font color="FFFFFF"><b>L 70</b></font></td>
-</tr>
-
-<tr>
-<td align="center"><font size="4">Corte con gillete</font></td>
-<td align="center" bgcolor="FF0000"><font color="FFFFFF"><b>L 90</b></font></td>
-</tr>
-
-<tr>
-<td align="center"><font size="4">Barba</font></td>
-<td align="center" bgcolor="FF0000"><font color="FFFFFF"><b>L 50</b></font></td>
-</tr>
-
-<tr>
-<td align="center"><font size="4">Cejas</font></td>
-<td align="center" bgcolor="FF0000"><font color="FFFFFF"><b>L 20</b></font></td>
-</tr>
-
-<tr>
-<td align="center"><font size="4">Diseños</font></td>
-<td align="center" bgcolor="FF0000"><font color="FFFFFF"><b> Precio variado</b></font></td>
-</tr>
-
-<tr>
-<td align="center"><b><font color="FF7B00" size="5"><u>Niños</u></font></b></td>
-<td align="center"><b><font size="5"> PRECIO </font></b></td>
-</tr>
-
-<tr>
-<td align="center"><font size="4">Corte normal</font></td>
-<td align="center" bgcolor="FF0000"><font color="FFFFFF"><b>L 70</b></font></td>
-</tr>
-
-<tr>
-<td align="center"><font size="4">Siza</font</td>
-<td align="center" bgcolor="FF0000"><font color="FFFFFF"><b>L 60</b></font></td>
-</tr>
-
-<tr>
-<td align="center"><font size="4">Corte con gillete</font></td>
-<td align="center" bgcolor="FF0000"><font color="FFFFFF"><b>L 80</b></font></td>
-</tr>
-
-<tr>
-<td align="center"><font size="4">Diseño</font></td>
-<td align="center" bgcolor="FF0000"><font color="FFFFFF"><b>Precio variado</b></font></td>
-</tr>
-
-</table><br><br><br><br><br><br>
-</center>
-
+                    <tr class="categoria-row">
+                        <td class="categoria-titulo">Niños</td>
+                        <td class="categoria-titulo">PRECIO</td>
+                    </tr>
+                    <tr>
+                        <td>Corte normal</td>
+                        <td class="precio-cell">L 70</td>
+                    </tr>
+                    <tr>
+                        <td>Siza</td>
+                        <td class="precio-cell">L 60</td>
+                    </tr>
+                    <tr>
+                        <td>Corte con gillette</td>
+                        <td class="precio-cell">L 80</td>
+                    </tr>
+                    <tr>
+                        <td>Diseño</td>
+                        <td class="precio-cell destacado">Precio variado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
